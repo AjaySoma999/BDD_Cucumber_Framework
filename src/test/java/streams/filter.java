@@ -12,6 +12,7 @@ public class filter {
      //   List<Integer> evenNumbers = numbers.stream().filter(n -> n % 2 == 0).collect(Collectors.toList());
     List<Integer> evenNumbers = numbers.stream().filter(n -> n % 2 == 0).toList();
         System.out.println("Filtered even numbers: " + evenNumbers);
+        //dsdsdsd
 
 
 
