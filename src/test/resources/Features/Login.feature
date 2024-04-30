@@ -1,6 +1,5 @@
 Feature: testing web page using cucumber
   Check user fill the general form in the page
-
   Scenario Outline: Login The WEB App
     Given Verify user is in <title> home page
     And User enter name in the <name> test-box
