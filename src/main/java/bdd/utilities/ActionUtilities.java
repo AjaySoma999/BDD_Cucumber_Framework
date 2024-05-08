@@ -1,9 +1,6 @@
 package bdd.utilities;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -34,7 +31,7 @@ public class ActionUtilities {
         select.selectByVisibleText(dropDownOption);
 
     }
-    public  void  alertAccept() {
+    public void alertAccept() {
         try {
             Alert alert = driver.switchTo().alert();
             System.out.println();
@@ -44,6 +41,13 @@ public class ActionUtilities {
             System.out.println("NoAlertPresentException");
             e.printStackTrace();
         }
+    }
+    public void scrollToMiddleOfElement(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        int windowHeight = driver.manage().window().getSize().getHeight();
+        int elementPosition = element.getLocation().getY();
+        int yOffset = elementPosition - (windowHeight / 2);
+        js.executeScript("window.scrollTo(0, arguments[0]);", yOffset);
     }
 }
 
