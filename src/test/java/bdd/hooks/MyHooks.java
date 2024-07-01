@@ -20,7 +20,6 @@ public class MyHooks {
     public void setup(){
         ConfigReader configReader=new ConfigReader();
      Properties properties= configReader.intializeProperties();
-
         driver= DriverFactory.initializeBrowser(properties.getProperty("browserName"));
         driver.get(properties.getProperty("applicationUrl"));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(configReader.implicitWait));

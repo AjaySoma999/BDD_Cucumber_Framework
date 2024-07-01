@@ -14,7 +14,6 @@ public class filter {
     List<Integer> evenNumbers = numbers.stream().filter(n -> n % 2 == 0).toList();
         System.out.println("Filtered even numbers: " + evenNumbers);
 
-
         // Example 2: map()
         List<String> numberStrings = numbers.stream()
                 .map(n -> "Number " + n)
