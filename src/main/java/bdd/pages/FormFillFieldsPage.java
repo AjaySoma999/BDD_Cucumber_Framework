@@ -1,21 +1,22 @@
 package bdd.pages;
 
+import bdd.sigleTonDesignParttern.MySession;
 import bdd.utilities.ActionUtilities;
+import io.cucumber.java.an.E;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class FormFillFieldsPage {
-    WebDriver driver;
-private ActionUtilities actUitls;
+    WebDriver driver= MySession.getInstance().getDriver();
+ ActionUtilities actUitls =new ActionUtilities();
 
-      public FormFillFieldsPage(WebDriver driver){
+     /* public FormFillFieldsPage(WebDriver driver){
           this.driver=driver;
           PageFactory.initElements(driver,this);
            actUitls =new ActionUtilities(driver);
-      }
-
+      }*/
     @FindBy(xpath = "//h1[@class='title']")
     private WebElement pageheader;
 
@@ -46,11 +47,14 @@ private ActionUtilities actUitls;
     @FindBy(xpath = "//p[text()='Date: ']//input[@id='datepicker']")
     private WebElement date;
 
-    public void verifyPageheader(String expecteddata){
-       String actualdata= pageheader.getText();
-        actualdata.equalsIgnoreCase(expecteddata);
-
-
+    public void verifyPageheader(String expecteddata) {
+        try {
+            actUitls.waitForElement(pageheader,5000);
+            String actualdata = pageheader.getText();
+            actualdata.equalsIgnoreCase(expecteddata);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void enterName(String data){

@@ -10,11 +10,11 @@ public class GetValueAttributePage {
     WebDriver driver;
     private ActionUtilities act;
 
-    public GetValueAttributePage(WebDriver driver) {
+  /*  public GetValueAttributePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
         act = new ActionUtilities(driver);
-    }
+    }*/
 
     @FindBy(xpath = "//input[@id='field1']")
     private WebElement field1;
@@ -22,10 +22,9 @@ public class GetValueAttributePage {
     @FindBy(xpath = "//input[@id='field2']")
     private WebElement field2;
 
-
     public void getValueFromfield1(String data) {
         try {
-            act.scrollToMiddleOfElement(field1);
+            act.scrollTOElement(field1);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

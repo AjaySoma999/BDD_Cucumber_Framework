@@ -1,6 +1,7 @@
 package bdd.hooks;
 
 import bdd.factory.DriverFactory;
+import bdd.sigleTonDesignParttern.MySession;
 import bdd.utilities.ConfigReader;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -19,8 +20,11 @@ public class MyHooks {
     @Before
     public void setup(){
         ConfigReader configReader=new ConfigReader();
-     Properties properties= configReader.intializeProperties();
-        driver= DriverFactory.initializeBrowser(properties.getProperty("browserName"));
+        Properties properties= configReader.intializeProperties();
+        System.out.println(properties.getProperty("browserName"));
+     //   driver= DriverFactory.initializeBrowser(properties.getProperty("browserName"));
+        MySession.getInstance().setDriver(properties.getProperty("browserName"));
+        driver= MySession.getInstance().getDriver();
         driver.get(properties.getProperty("applicationUrl"));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(configReader.implicitWait));
     }

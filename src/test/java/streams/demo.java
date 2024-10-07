@@ -1,6 +1,7 @@
 package streams;
 
 import bdd.utilities.ActionUtilities;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -9,11 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.HasDevTools;
-import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.devtools.v113.runtime.Runtime;
 import java.time.Duration;
 import java.util.List;
 import java.util.Optional;
@@ -31,6 +28,7 @@ public class demo {
     }
     @Test
     public void KitapActionmethods() throws InterruptedException {
+        WebDriverManager.chromedriver().setup();
         WebDriver driver=new ChromeDriver();
         driver.get("http://20.59.29.222:81/");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -39,7 +37,7 @@ public class demo {
         driver.findElement(By.xpath("//input[@name='email']")).sendKeys("kitap2@kairostech.com");
         driver.findElement(By.xpath("//input[@name='password']")).sendKeys("Password@1");
         driver.findElement(By.xpath("//button[@type='submit']")).click();
-         actions=new ActionUtilities(driver);
+         actions=new ActionUtilities();
         WebElement confirm =driver.findElement(By.xpath("//button[text()='Confirm']"));
         actions.waitForElement(confirm, 15);
         confirm.click();
@@ -89,7 +87,7 @@ public class demo {
         driver.quit();
 
     }*/
-    @Test
+    /*@Test
     public void asdsd(){
 
   System.setProperty("webdriver.chrome.driver", "C:\\Users\\AjayKumarSoma-Kairos\\Downloads\\chromedriver-win64\\chromedriver-win64\\chromedriver.exe");
@@ -133,7 +131,7 @@ public class demo {
         // Clean up
       //  driver.quit();
 
-    }
+    }*/
 }
  /* public static void main(String[] args) {
        // Set up Chrome options

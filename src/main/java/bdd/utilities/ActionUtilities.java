@@ -1,5 +1,6 @@
 package bdd.utilities;
 
+import bdd.sigleTonDesignParttern.MySession;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,10 +10,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class ActionUtilities {
-    WebDriver driver;
-    public ActionUtilities(WebDriver driver) {
+    //WebDriver driver;
+   /* public ActionUtilities(WebDriver driver) {
         this.driver = driver;
-    }
+    }*/
+    WebDriver driver=MySession.getInstance().getDriver();
+
     public WebElement waitForElement(WebElement element,long durationInSeconds) {
         WebElement webElement = null;
         try {
@@ -31,6 +34,7 @@ public class ActionUtilities {
         select.selectByVisibleText(dropDownOption);
 
     }
+
     public void alertAccept() {
         try {
             Alert alert = driver.switchTo().alert();
@@ -48,6 +52,10 @@ public class ActionUtilities {
         int elementPosition = element.getLocation().getY();
         int yOffset = elementPosition - (windowHeight / 2);
         js.executeScript("window.scrollTo(0, arguments[0]);", yOffset);
+    }
+    public void scrollTOElement(WebElement element){
+        JavascriptExecutor js=(JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true);",element);
     }
 }
 

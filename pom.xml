@@ -16,14 +16,17 @@
   </properties>
 
   <dependencies>
-    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.22</version>
+    </dependency>
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-junit</artifactId>
-      <version>7.16.1</version>
+      <version>7.18.0</version>
       <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-core -->
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-core</artifactId>
@@ -34,7 +37,6 @@
       <artifactId>selenium-chrome-driver</artifactId>
       <version>4.5.3</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
     <dependency>
       <groupId>io.cucumber</groupId>
       <artifactId>cucumber-java</artifactId>
@@ -43,7 +45,7 @@
     <dependency>
       <groupId>org.seleniumhq.selenium</groupId>
       <artifactId>selenium-java</artifactId>
-      <version>4.22.0</version>
+      <version>4.20.0</version>
     </dependency>
     <dependency>
       <groupId>org.apache.poi</groupId>
@@ -55,23 +57,16 @@
       <artifactId>poi-ooxml</artifactId>
       <version>5.2.3</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
     <dependency>
       <groupId>io.github.bonigarcia</groupId>
       <artifactId>webdrivermanager</artifactId>
       <version>5.8.0</version>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-devtools-v113 -->
+    <!-- https://mvnrepository.com/artifact/com.microsoft.playwright/playwright -->
     <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-devtools-v113</artifactId>
-      <version>4.11.0</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-chrome-driver</artifactId>
-      <version>4.0.0</version>
+      <groupId>com.microsoft.playwright</groupId>
+      <artifactId>playwright</artifactId>
+      <version>1.45.0</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -79,12 +74,21 @@
       <version>4.13.1</version>
       <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/org.testng/testng -->
     <dependency>
       <groupId>org.testng</groupId>
       <artifactId>testng</artifactId>
       <version>7.10.2</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.github.sukgu</groupId>
+      <artifactId>automation</artifactId>
+      <version>0.1.5</version>
+    </dependency>
+    <dependency>
+      <groupId>io.appium</groupId>
+      <artifactId>java-client</artifactId>
+      <version>9.2.3</version>
     </dependency>
   </dependencies>
   <build>

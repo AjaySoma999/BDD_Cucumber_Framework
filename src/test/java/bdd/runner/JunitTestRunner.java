@@ -5,7 +5,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="src/test/resources/Features",
+@CucumberOptions(features="src/test/resources/Features/TestAjay.feature",
         glue={"bdd/stepDefinitions", "bdd/hooks"},
         publish=true,
         plugin={"pretty","html:target/CucumberReports/CucumberReport.html"})

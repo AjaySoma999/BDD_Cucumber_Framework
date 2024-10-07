@@ -2,20 +2,22 @@ package bdd.stepDefinitions;
 
 import bdd.factory.DriverFactory;
 import bdd.pages.FormFillFieldsPage;
+import bdd.sigleTonDesignParttern.MySession;
 import bdd.utilities.ActionUtilities;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.WebDriver;
 
 
 public class FillGeneralForm {
-WebDriver driver;
+WebDriver driver= MySession.getInstance().getDriver();
 FormFillFieldsPage formpage;
-ActionUtilities ActUtil=new ActionUtilities(driver);
+/*ActionUtilities ActUtil=new ActionUtilities(driver);*/
 
     @Given("^Verify user is in (.+) home page$")
     public void verify_user_is_in_home_page(String data) {
-        driver= DriverFactory.getDriver();
-        formpage =new FormFillFieldsPage(driver);
+        //driver= DriverFactory.getDriver();
+     //   formpage =new FormFillFieldsPage(driver);
+        formpage =new FormFillFieldsPage();
         formpage.verifyPageheader(data);
         System.out.println("verify_user_is_in_home_page qwqwqw"+ data);
     }

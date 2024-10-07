@@ -10,7 +10,7 @@ public class GetValueAttribute {
 
     @Given("^Verify user is able to get the value (.+) from the value attribute with contains data in the text field$")
     public void verify_user_is_able_to_get_the_value_from_the_value_attribute_with_contains_data_in_the_text_field(String data) {
-        getatt =new GetValueAttributePage(driver);
+        getatt =new GetValueAttributePage();
         getatt.getValueFromfield1(data);
     }
 
